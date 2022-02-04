@@ -40,9 +40,15 @@ const form = document.querySelector("form") as HTMLFormElement;
 form.addEventListener("submit" , (e : Event) => {
     e.preventDefault()
     const input = document.querySelector("#auteur") as HTMLInputElement ;
+    const input2 = document.querySelector("#titre") as HTMLInputElement ;
 
     if (input.value != ""){
         const filtre = data.filter( user =>  user.name.toLowerCase().includes(input.value.toLowerCase()) )
+        render(filtre)
+    }
+
+    else if (input2.value != ""){
+        const filtre = data.filter( user =>  user.name.toLowerCase().includes(input2.value.toLowerCase()) )
         render(filtre)
     }
 })

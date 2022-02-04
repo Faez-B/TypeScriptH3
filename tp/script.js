@@ -65,8 +65,13 @@ var form = document.querySelector("form");
 form.addEventListener("submit", function (e) {
     e.preventDefault();
     var input = document.querySelector("#auteur");
+    var input2 = document.querySelector("#titre");
     if (input.value != "") {
         var filtre = data.filter(function (user) { return user.name.toLowerCase().includes(input.value.toLowerCase()); });
+        render(filtre);
+    }
+    else if (input2.value != "") {
+        var filtre = data.filter(function (user) { return user.name.toLowerCase().includes(input2.value.toLowerCase()); });
         render(filtre);
     }
 });
