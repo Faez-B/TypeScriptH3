@@ -9,19 +9,20 @@ interface User {
 let data : any;
 
 function render(data : any){
-    let html = ""
+    let html = "<div class='row'>"
 
     data.forEach( user => {
         html += `
-        <article>
+        <article class="col-4">
             <h2 class="text-primary">${user.name}</h2>
             <h6>${user.email}</h6>
             <h3 class="text-warning">Titre des articles rédigés : </h3>
-            <p>${user.contenu}</p>
+            <p>${user.adress}</p>
         </article>
         `
     } )
     const content = document.querySelector(".content") as HTMLDivElement;
+    html += "</div>";
     content.innerHTML = html
 }
 

@@ -37,11 +37,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 var data;
 function render(data) {
-    var html = "";
+    var html = "<div class='row'>";
     data.forEach(function (user) {
-        html += "\n        <article>\n            <h2 class=\"text-primary\">".concat(user.name, "</h2>\n            <h6>").concat(user.email, "</h6>\n            <h3 class=\"text-warning\">Titre des articles r\u00E9dig\u00E9s : </h3>\n            <p>").concat(user.contenu, "</p>\n        </article>\n        ");
+        html += "\n        <article class=\"col-4\">\n            <h2 class=\"text-primary\">".concat(user.name, "</h2>\n            <h6>").concat(user.email, "</h6>\n            <h3 class=\"text-warning\">Titre des articles r\u00E9dig\u00E9s : </h3>\n            <p>").concat(user.adress, "</p>\n        </article>\n        ");
     });
     var content = document.querySelector(".content");
+    html += "</div>";
     content.innerHTML = html;
 }
 document.addEventListener("DOMContentLoaded", function () { return __awaiter(_this, void 0, void 0, function () {
