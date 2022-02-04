@@ -7,18 +7,10 @@ interface Administrateur {
     password : string
 }
 
-type TransitionType = Omit<Administrateur, "email" | "dt_connexion" | "login" | "password" >;
+type UtilisateurAnonyme = Partial<Pick<Administrateur, "nom" | "ip">>;
 
-// const transition : TransitionType = {
-//     nom : "syg" ,
-//     ip : "cjkbdk"
+
+// const user : UtilisateurAnonyme = {
+//     nom : "bjhb",
+//     ip : "kjckj"
 // }
-
-type TransitionNom = Pick<TransitionType, "nom">;
-type TransitionNomFacultative = Partial<TransitionNom>;
-
-
-interface UtilisateurAnonyme{
-    nom ?:string,
-    ip : string 
-}
